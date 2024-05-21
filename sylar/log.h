@@ -57,7 +57,7 @@ class LogAppender{
 public:
     typedef std::shared_ptr<LogAppender> ptr;
     virtual ~LogAppender(){}
-    void log(LogLevel::Level level, LogEvent::ptr event);
+    virtual void log(LogLevel::Level level, LogEvent::ptr event) = 0;
 private:
     LogLevel::Level m_level;
 
@@ -89,7 +89,7 @@ private:
     LogLevel::Level m_level; //日志级别
     std::list<LogAppender::ptr> m_appenders; //Appender集合
 };
-
+ 
 // 输出到控制台的Appender
 class StdoutLogAppender : public LogAppender{
 
