@@ -24,6 +24,9 @@ SUFFIXES =
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -54,6 +57,76 @@ CMAKE_SOURCE_DIR = /home/dulred/sylar
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/dulred/sylar/build
+
+#=============================================================================
+# Target rules for target CMakeFiles/sylar.dir
+
+# All Build rule for target.
+CMakeFiles/sylar.dir/all:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/depend
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles  1
+	@echo "Built target sylar"
+.PHONY : CMakeFiles/sylar.dir/all
+
+# Include target in all.
+all: CMakeFiles/sylar.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sylar.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sylar.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 0
+.PHONY : CMakeFiles/sylar.dir/rule
+
+# Convenience name for target.
+sylar: CMakeFiles/sylar.dir/rule
+.PHONY : sylar
+
+# clean rule for target.
+CMakeFiles/sylar.dir/clean:
+	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/clean
+.PHONY : CMakeFiles/sylar.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/sylar.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test.dir
+
+# All Build rule for target.
+CMakeFiles/test.dir/all: CMakeFiles/sylar.dir/all
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles  2
+	@echo "Built target test"
+.PHONY : CMakeFiles/test.dir/all
+
+# Include target in all.
+all: CMakeFiles/test.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 0
+.PHONY : CMakeFiles/test.dir/rule
+
+# Convenience name for target.
+test: CMakeFiles/test.dir/rule
+.PHONY : test
+
+# clean rule for target.
+CMakeFiles/test.dir/clean:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/clean
+.PHONY : CMakeFiles/test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/test.dir/clean
+.PHONY : clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
