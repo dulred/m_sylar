@@ -2,15 +2,14 @@
 #include <string>
 
 int main() {
-    std::string str = "Hello, world!";
+    std::string str = "Hello, World!";
+    
+    // 提取子字符串 "Hello"
+    std::string sub1 = str.substr(0, 5);
+    std::cout << "sub1: " << sub1 << std::endl; // 输出: sub1: Hello
+    
 
-    // 访问字符串中的第一个字符
-    char firstChar = str[2];
-    std::cout << "First character: " << firstChar << str.size() <<std::endl;
-
-    // 修改字符串中的第一个字符
-    str[0] = 'h';
-    std::cout << "Modified string: " << str << std::endl;
-
+    std::cout << "str: " << str << std::endl; // 输出: sub2: World
+    
     return 0;
 }

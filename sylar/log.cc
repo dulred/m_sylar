@@ -1,6 +1,106 @@
 #include <log.h>
+#include <map>
 #include <iostream>
 namespace sylar{
+
+    const char *LogLevel::ToString(LogLevel::Level Level)
+    {
+        switch (Level){
+#define XX(name) \
+        case LogLevel::name: \
+            return #name; \
+            break;
+        XX(DEBUG);
+        XX(INFO);
+        XX(WARN);
+        XX(ERROR);
+        XX(FATAL);
+#undef XX
+        default:
+            return "UNKNOW";
+        }
+        return "UNKNOW";
+    }
+
+
+class MessageFormatItem : public LogFormatter::FormatItem{
+public:
+    void format (std::ostream& os ,std::shared_ptr<Logger> logger, LogLevel::Level level,LogEvent::ptr event) override{
+        os<<event->getContent();
+    }
+};
+
+class LevelFormatItem : public LogFormatter::FormatItem{
+     void format (std::ostream& os , std::shared_ptr<Logger> logger,LogLevel::Level level,LogEvent::ptr event) override{
+        os<<LogLevel::ToString(level);
+    }
+};
+
+class ElapseFormatItem : public LogFormatter::FormatItem{
+     void format (std::ostream& os , std::shared_ptr<Logger> logger,LogLevel::Level level,LogEvent::ptr event) override{
+        os<<event->getElapse();
+    }
+};
+
+class NameFormatItem : public LogFormatter::FormatItem{
+     void format (std::ostream& os , std::shared_ptr<Logger> logger,LogLevel::Level level,LogEvent::ptr event) override{
+        os<<logger->getName();
+    }
+};
+
+class ThreadIdFormatItem : public LogFormatter::FormatItem{
+     void format (std::ostream& os , std::shared_ptr<Logger> logger,LogLevel::Level level,LogEvent::ptr event) override{
+        os<<event->getThreadId();
+    }
+};
+
+class FiberIdFormatItem : public LogFormatter::FormatItem{
+     void format (std::ostream& os , std::shared_ptr<Logger> logger,LogLevel::Level level,LogEvent::ptr event) override{
+        os<<event->getFiberId();
+    }
+};
+
+class DateTimeFormatItem : public LogFormatter::FormatItem{
+public:
+    DateTimeFormatItem(const std::string& format = "%Y:%m:%d %H:%M:%S"):m_format(format){}
+    void format (std::ostream& os , std::shared_ptr<Logger> logger,LogLevel::Level level,LogEvent::ptr event) override{
+        os<<event->getTime();
+    }
+private:
+    std::string m_format;
+
+};
+
+class FilenameFormatItem : public LogFormatter::FormatItem{
+     void format (std::ostream& os , std::shared_ptr<Logger> logger,LogLevel::Level level,LogEvent::ptr event) override{
+        os<<event->getFile();
+    }
+};
+
+class LineFormatItem : public LogFormatter::FormatItem{
+     void format (std::ostream& os , std::shared_ptr<Logger> logger,LogLevel::Level level,LogEvent::ptr event) override{
+        os<<event->getLine();
+    }
+};
+
+class NewLineFormatItem : public LogFormatter::FormatItem{
+     void format (std::ostream& os , std::shared_ptr<Logger> logger,LogLevel::Level level,LogEvent::ptr event) override{
+        os<<std::endl;
+    }
+};
+
+
+class StringFormatItem : public LogFormatter::FormatItem{
+public:
+    StringFormatItem(const std::string& str):FormatItem(str),m_string(str){}
+     void format (std::ostream& os , std::shared_ptr<Logger> logger,LogLevel::Level level,LogEvent::ptr event) override{
+        os<<event->getLine();
+    }
+private:
+    std::string m_string;
+};
+
+
 
     Logger::Logger(const std::string& name = "root"):m_name(name){
     };
@@ -50,22 +150,22 @@ namespace sylar{
     };
 
 
-    void StdoutLogAppender::log(LogLevel::Level level, LogEvent::ptr event)
+    void StdoutLogAppender::log(std::shared_ptr<Logger> logger,LogLevel::Level level, LogEvent::ptr event)
     {
         if (level >= m_level)
         {
-            std::cout<<m_formatter->format(event);
+            std::cout<<m_formatter->format(logger,level,event);
         }
         
     }
     FileLogAppender::FileLogAppender(const std::string &filename):m_filename(filename)
     {
     }
-    void FileLogAppender::log(LogLevel::Level level, LogEvent::ptr event)
+    void FileLogAppender::log(std::shared_ptr<Logger> logger,LogLevel::Level level, LogEvent::ptr event)
     {
         if (level >= m_level)
             {
-                m_filestream<<m_formatter->format(event);
+                m_filestream<<m_formatter->format(logger,level,event);
             }
     }
     bool FileLogAppender::reopen()
@@ -78,5 +178,118 @@ namespace sylar{
         return !!m_filestream;
         
     }
+
+    LogFormatter::LogFormatter(const std::string &pattern):m_pattern(pattern)
+    {
+    }
+
+    std::string LogFormatter::format(std::shared_ptr<Logger> logger,LogLevel::Level level, LogEvent::ptr event)
+    {
+        std::stringstream ss;
+        for (auto &i : m_items)
+        {
+            i->format(ss,logger,level,event);
+        }
+        
+        return ss.str();
+    }
+//%xxx %xxx{xxx} %%
+void LogFormatter::init() {
+    //str, format ,type
+    std::vector<std::tuple<std::string,std::string,int>> vec;
+    std::string nstr;
+    for (size_t i = 0; i < m_pattern.size(); ++i)
+    {
+        if(m_pattern[i]!='%'){
+            nstr.append(1,m_pattern[i]);
+            continue;
+        }
+        if ((i+1)<m_pattern.size())
+        {
+            if(m_pattern[i+1]=='%'){
+                nstr.append(1,'%');
+                continue;
+            }
+        }
+
+        size_t n = i + 1;
+        int fmt_status = 0;
+        size_t fmt_begin = 0;
+
+        std::string str;
+        std::string fmt;
+        while(n<m_pattern.size()){
+            if (isspace(m_pattern[n]))
+            {
+                break;
+            }
+            if (fmt_status==0){
+                if (m_pattern[n]=='{')
+                {
+                    str = m_pattern.substr(i + 1, n - i - 1);
+                    fmt_status = 1; //解析格式
+                    fmt_begin = n;
+                    ++n;
+                    continue;
+
+                }
+                
+            }
+            if (fmt_status == 1)
+            {
+                if (m_pattern[n] == '}')
+                {
+                   fmt = m_pattern.substr(fmt_begin + 1 ,n - fmt_begin - 1);
+                   fmt_status = 2;
+                   break;
+                }
+                
+            }    
+        }
+
+        if (fmt_status == 0){
+          if (!nstr.empty())
+          {
+                vec.push_back(std::make_tuple(nstr,"",0));
+          }
+          str = m_pattern.substr(i + 1, n - i - 1);
+          vec.push_back(std::make_tuple(str,fmt,1));
+          i = n;
+            
+        }else if (fmt_status == 1)
+        {
+            std::cout << "pattern parse error: " << m_pattern << " - " << m_pattern.substr(i) << std::endl;
+            vec.push_back(std::make_tuple("<<pattern_error>>", fmt, 0));
+        }else if (fmt_status == 2)
+        {
+            if (!nstr.empty())
+            {
+                vec.push_back(std::make_tuple(nstr,"",0));
+            }
+            vec.push_back(std::make_tuple(str,fmt,1));
+            i == n;
+        }
+    }
+    if (!nstr.empty())
+        {
+            vec.push_back(std::make_tuple(nstr,"",0));
+        }
+    static std::map<>
+        //%m -- 消息体
+        //%p -- level
+        //%r -- 启动后的时间
+        //%c -- 日志名称
+        //%t -- 线程id
+        //%n -- 回车换行
+        //%d -- 时间
+        //%f -- 文件名
+        //%l -- 行号
+}
+
+
+
+
+
+
 
 }
