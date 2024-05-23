@@ -35,8 +35,8 @@ public:
     uint32_t getElapse() const {return m_elapse;}
     uint32_t getThreadId() const {return m_threadId;}
     uint32_t getFiberId() const {return m_fiberId;}
-    uint64_t getTime() const {return m_threadId;}
-    const std::string& getContent() const {return m_ss.str();}
+    uint64_t getTime() const {return m_time;}
+    std::string getContent() const {return m_ss.str();}
 
     std::stringstream& getSS() {return m_ss;} 
 private:
@@ -93,7 +93,7 @@ public:
     void setFormatter(LogFormatter::ptr val){m_formatter=val;}
     LogFormatter::ptr getFomatter() const {return m_formatter;}
 protected:
-    LogLevel::Level m_level;
+    LogLevel::Level m_level = LogLevel::DEBUG;
     LogFormatter::ptr m_formatter;
 };
 

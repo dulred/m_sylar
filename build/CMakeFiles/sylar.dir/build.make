@@ -41,10 +41,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dulred/sylar
+CMAKE_SOURCE_DIR = /home/dulred/project/m_sylar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dulred/sylar/build
+CMAKE_BINARY_DIR = /home/dulred/project/m_sylar/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/sylar.dir/depend.make
@@ -57,17 +57,17 @@ include CMakeFiles/sylar.dir/flags.make
 
 CMakeFiles/sylar.dir/sylar/log.cc.o: CMakeFiles/sylar.dir/flags.make
 CMakeFiles/sylar.dir/sylar/log.cc.o: ../sylar/log.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/project/m_sylar/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/sylar.dir/sylar/log.cc.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/log.cc.o -c /home/dulred/sylar/sylar/log.cc
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/log.cc.o -c /home/dulred/project/m_sylar/sylar/log.cc
 
 CMakeFiles/sylar.dir/sylar/log.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/log.cc.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/sylar/sylar/log.cc > CMakeFiles/sylar.dir/sylar/log.cc.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/project/m_sylar/sylar/log.cc > CMakeFiles/sylar.dir/sylar/log.cc.i
 
 CMakeFiles/sylar.dir/sylar/log.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/log.cc.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/sylar/sylar/log.cc -o CMakeFiles/sylar.dir/sylar/log.cc.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/project/m_sylar/sylar/log.cc -o CMakeFiles/sylar.dir/sylar/log.cc.s
 
 CMakeFiles/sylar.dir/sylar/log.cc.o.requires:
 .PHONY : CMakeFiles/sylar.dir/sylar/log.cc.o.requires
@@ -103,6 +103,6 @@ CMakeFiles/sylar.dir/clean:
 .PHONY : CMakeFiles/sylar.dir/clean
 
 CMakeFiles/sylar.dir/depend:
-	cd /home/dulred/sylar/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dulred/sylar /home/dulred/sylar /home/dulred/sylar/build /home/dulred/sylar/build /home/dulred/sylar/build/CMakeFiles/sylar.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dulred/project/m_sylar/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dulred/project/m_sylar /home/dulred/project/m_sylar /home/dulred/project/m_sylar/build /home/dulred/project/m_sylar/build /home/dulred/project/m_sylar/build/CMakeFiles/sylar.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/sylar.dir/depend
 

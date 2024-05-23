@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../sylar/log.h
+/home/dulred/project/m_sylar/sylar/log.h
 string
 -
 stdint.h
@@ -22,17 +22,9 @@ sstream
 fstream
 -
 
-/home/dulred/project/m_sylar/sylar/log.cc
-log.h
--
-map
--
+/home/dulred/project/m_sylar/tests/test2.cc
 iostream
 -
-functional
--
-time.h
--
-string.h
--
+../sylar/log.h
+/home/dulred/project/m_sylar/sylar/log.h
 

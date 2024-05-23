@@ -41,4 +41,6 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/sylar.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"
+  "CMakeFiles/test2.dir/DependInfo.cmake"
+  "CMakeFiles/test3.dir/DependInfo.cmake"
   )
