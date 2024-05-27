@@ -41,10 +41,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dulred/project/m_sylar
+CMAKE_SOURCE_DIR = /home/dulred/sylar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dulred/project/m_sylar/build
+CMAKE_BINARY_DIR = /home/dulred/sylar/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/test.dir/depend.make
@@ -57,17 +57,17 @@ include CMakeFiles/test.dir/flags.make
 
 CMakeFiles/test.dir/tests/test.cc.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/tests/test.cc.o: ../tests/test.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/project/m_sylar/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/test.dir/tests/test.cc.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/test.dir/tests/test.cc.o -c /home/dulred/project/m_sylar/tests/test.cc
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/test.dir/tests/test.cc.o -c /home/dulred/sylar/tests/test.cc
 
 CMakeFiles/test.dir/tests/test.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/test.cc.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/project/m_sylar/tests/test.cc > CMakeFiles/test.dir/tests/test.cc.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/sylar/tests/test.cc > CMakeFiles/test.dir/tests/test.cc.i
 
 CMakeFiles/test.dir/tests/test.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test.cc.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/project/m_sylar/tests/test.cc -o CMakeFiles/test.dir/tests/test.cc.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/sylar/tests/test.cc -o CMakeFiles/test.dir/tests/test.cc.s
 
 CMakeFiles/test.dir/tests/test.cc.o.requires:
 .PHONY : CMakeFiles/test.dir/tests/test.cc.o.requires
@@ -104,6 +104,6 @@ CMakeFiles/test.dir/clean:
 .PHONY : CMakeFiles/test.dir/clean
 
 CMakeFiles/test.dir/depend:
-	cd /home/dulred/project/m_sylar/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dulred/project/m_sylar /home/dulred/project/m_sylar /home/dulred/project/m_sylar/build /home/dulred/project/m_sylar/build /home/dulred/project/m_sylar/build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dulred/sylar/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dulred/sylar /home/dulred/sylar /home/dulred/sylar/build /home/dulred/sylar/build /home/dulred/sylar/build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test.dir/depend
 

@@ -1,4 +1,4 @@
-/home/dulred/project/m_sylar/build/CMakeFiles/sylar.dir
-/home/dulred/project/m_sylar/build/CMakeFiles/test.dir
-/home/dulred/project/m_sylar/build/CMakeFiles/test2.dir
-/home/dulred/project/m_sylar/build/CMakeFiles/test3.dir
+/home/dulred/sylar/build/CMakeFiles/sylar.dir
+/home/dulred/sylar/build/CMakeFiles/test.dir
+/home/dulred/sylar/build/CMakeFiles/test2.dir
+/home/dulred/sylar/build/CMakeFiles/test3.dir

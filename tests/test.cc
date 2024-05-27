@@ -9,7 +9,7 @@ int main (int argc , char** argv){
     event->getSS() << "hello sylar log i'm ok";
 
     logger->log(sylar::LogLevel::DEBUG,event);
-    std::cout << "hello sylar log" << std::endl;
+    // std::cout << "hello sylar log" << std::endl;    
 
     return 0;
 }

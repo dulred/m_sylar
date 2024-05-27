@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/dulred/project/m_sylar/tests/test3.cc
+/home/dulred/sylar/tests/test3.cc
 iostream
 -
-sstream
+string
 -
 

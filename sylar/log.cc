@@ -126,7 +126,7 @@ class StringFormatItem : public LogFormatter::FormatItem{
 public:
     StringFormatItem(const std::string& str):m_string(str){}
      void format (std::ostream& os , std::shared_ptr<Logger> logger,LogLevel::Level level,LogEvent::ptr event) override{
-        os<<event->getLine();
+        os<<m_string;
     }
 private:
     std::string m_string;
@@ -300,7 +300,6 @@ void LogFormatter::init() {
 
         if (fmt_status == 0){
           if (!nstr.empty()){
-                std::cout << nstr << "bb";
                 vec.push_back(std::make_tuple(nstr,std::string(),0));
                 nstr.clear();
           }
@@ -325,6 +324,12 @@ void LogFormatter::init() {
     if (!nstr.empty()){
             vec.push_back(std::make_tuple(nstr,"",0));
     }
+    
+    // 遍历并输出向量中的每个元素
+    // for (const auto& item : vec) {
+    //     std::cout << "First: " << std::get<0>(item) << ", Second: " << std::get<1>(item) << ", Third: " << std::get<2>(item) << std::endl;
+    // }
+    
     static std::map<std::string, std::function<FormatItem::ptr(const std::string& str)>> s_format_items = {
 #define XX(str, C) \
             {#str, [](const std::string& fmt){return FormatItem::ptr(new C(fmt));}} 
@@ -340,6 +345,10 @@ void LogFormatter::init() {
             XX(l, LineFormatItem),
 #undef XX
     };
+    
+    //    for (const auto& item : s_format_items) {
+    //     std::cout << "Key: " << std::get<0>(item) << ", Function exists: " << (std::get<1>(item) ? "Yes" : "No") << std::endl;
+    // }
 
     for(auto& i : vec){
         if(std::get<2>(i) == 0){
@@ -349,13 +358,13 @@ void LogFormatter::init() {
             if(it == s_format_items.end()) {
                m_items.push_back(FormatItem::ptr(new StringFormatItem("<<error_fomat %" + std::get<0>(i) + ">>")));
             } else {    
-                m_items.push_back(it->second(std::get<1>(i)));
+                m_items.push_back(it->second(std::get<1>(i)));       
             }
-        }
+        } 
 
-        std::cout <<"(" << std::get<0>(i) << ") - (" << std::get<1>(i) << ") - (" << std::get<2>(i) << ")"<< std::endl;
+        // std::cout <<"(" << std::get<0>(i) << ") - (" << std::get<1>(i) << ") - (" << std::get<2>(i) << ")"<< std::endl;
     }
-    std::cout<< m_items.size() << std::endl;
+    // std::cout<< m_items.size() << std::endl;
 }
 
 

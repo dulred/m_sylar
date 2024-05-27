@@ -22,7 +22,7 @@ sstream
 fstream
 -
 
-/home/dulred/project/m_sylar/sylar/log.cc
+/home/dulred/sylar/sylar/log.cc
 log.h
 -
 map
