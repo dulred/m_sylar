@@ -5,6 +5,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/dulred/sylar/sylar/log.cc" "/home/dulred/sylar/build/CMakeFiles/sylar.dir/sylar/log.cc.o"
+  "/home/dulred/sylar/sylar/util.cc" "/home/dulred/sylar/build/CMakeFiles/sylar.dir/sylar/util.cc.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

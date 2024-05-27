@@ -4,3 +4,6 @@
 CMakeFiles/sylar.dir/sylar/log.cc.o
  ../sylar/log.h
  /home/dulred/sylar/sylar/log.cc
+CMakeFiles/sylar.dir/sylar/util.cc.o
+ /home/dulred/sylar/sylar/util.cc
+ /home/dulred/sylar/sylar/util.h

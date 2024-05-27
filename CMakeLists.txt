@@ -7,6 +7,7 @@ include_directories(${CMAKE_SOURCE_DIR}/sylar)
 
 set(LIB_SRC
     sylar/log.cc
+    sylar/util.cc
     )
 
 add_library(sylar SHARED ${LIB_SRC})

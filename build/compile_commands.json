@@ -6,6 +6,11 @@
 },
 {
   "directory": "/home/dulred/sylar/build",
+  "command": "/usr/bin/g++   -Dsylar_EXPORTS  -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -I/home/dulred/sylar/sylar    -o CMakeFiles/sylar.dir/sylar/util.cc.o -c /home/dulred/sylar/sylar/util.cc",
+  "file": "/home/dulred/sylar/sylar/util.cc"
+},
+{
+  "directory": "/home/dulred/sylar/build",
   "command": "/usr/bin/g++     -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -g -I/home/dulred/sylar/sylar    -o CMakeFiles/test.dir/tests/test.cc.o -c /home/dulred/sylar/tests/test.cc",
   "file": "/home/dulred/sylar/tests/test.cc"
 },
