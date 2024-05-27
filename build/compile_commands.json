@@ -1,27 +1,27 @@
 [
 {
   "directory": "/home/dulred/sylar/build",
-  "command": "/usr/bin/g++   -Dsylar_EXPORTS  -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -I/home/dulred/sylar/sylar    -o CMakeFiles/sylar.dir/sylar/log.cc.o -c /home/dulred/sylar/sylar/log.cc",
+  "command": "/usr/bin/g++   -Dsylar_EXPORTS  -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -I/home/dulred/sylar/. -I/apps/sylar/include    -o CMakeFiles/sylar.dir/sylar/log.cc.o -c /home/dulred/sylar/sylar/log.cc",
   "file": "/home/dulred/sylar/sylar/log.cc"
 },
 {
   "directory": "/home/dulred/sylar/build",
-  "command": "/usr/bin/g++   -Dsylar_EXPORTS  -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -I/home/dulred/sylar/sylar    -o CMakeFiles/sylar.dir/sylar/util.cc.o -c /home/dulred/sylar/sylar/util.cc",
+  "command": "/usr/bin/g++   -Dsylar_EXPORTS  -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -I/home/dulred/sylar/. -I/apps/sylar/include    -o CMakeFiles/sylar.dir/sylar/util.cc.o -c /home/dulred/sylar/sylar/util.cc",
   "file": "/home/dulred/sylar/sylar/util.cc"
 },
 {
   "directory": "/home/dulred/sylar/build",
-  "command": "/usr/bin/g++   -Dsylar_EXPORTS  -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -I/home/dulred/sylar/sylar    -o CMakeFiles/sylar.dir/sylar/config.cc.o -c /home/dulred/sylar/sylar/config.cc",
+  "command": "/usr/bin/g++   -Dsylar_EXPORTS  -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -g -fPIC -I/home/dulred/sylar/. -I/apps/sylar/include    -o CMakeFiles/sylar.dir/sylar/config.cc.o -c /home/dulred/sylar/sylar/config.cc",
   "file": "/home/dulred/sylar/sylar/config.cc"
 },
 {
   "directory": "/home/dulred/sylar/build",
-  "command": "/usr/bin/g++     -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -g -I/home/dulred/sylar/sylar    -o CMakeFiles/test.dir/tests/test.cc.o -c /home/dulred/sylar/tests/test.cc",
+  "command": "/usr/bin/g++     -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -g -I/home/dulred/sylar/. -I/apps/sylar/include    -o CMakeFiles/test.dir/tests/test.cc.o -c /home/dulred/sylar/tests/test.cc",
   "file": "/home/dulred/sylar/tests/test.cc"
 },
 {
   "directory": "/home/dulred/sylar/build",
-  "command": "/usr/bin/g++     -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -g -I/home/dulred/sylar/sylar    -o CMakeFiles/test_config.dir/tests/test_config.cc.o -c /home/dulred/sylar/tests/test_config.cc",
+  "command": "/usr/bin/g++     -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -g -I/home/dulred/sylar/. -I/apps/sylar/include    -o CMakeFiles/test_config.dir/tests/test_config.cc.o -c /home/dulred/sylar/tests/test_config.cc",
   "file": "/home/dulred/sylar/tests/test_config.cc"
 }
 ]
