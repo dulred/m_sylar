@@ -65,7 +65,7 @@ CMAKE_BINARY_DIR = /home/dulred/sylar/build
 CMakeFiles/sylar.dir/all:
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/depend
 	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles  1 2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles  1 2 3
 	@echo "Built target sylar"
 .PHONY : CMakeFiles/sylar.dir/all
 
@@ -75,7 +75,7 @@ all: CMakeFiles/sylar.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sylar.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sylar.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 0
 .PHONY : CMakeFiles/sylar.dir/rule
@@ -100,7 +100,7 @@ clean: CMakeFiles/sylar.dir/clean
 CMakeFiles/test.dir/all: CMakeFiles/sylar.dir/all
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles  4
 	@echo "Built target test"
 .PHONY : CMakeFiles/test.dir/all
 
@@ -110,7 +110,7 @@ all: CMakeFiles/test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 0
 .PHONY : CMakeFiles/test.dir/rule
@@ -129,73 +129,38 @@ clean: CMakeFiles/test.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/test2.dir
+# Target rules for target CMakeFiles/test_config.dir
 
 # All Build rule for target.
-CMakeFiles/test2.dir/all: CMakeFiles/sylar.dir/all
-	$(MAKE) -f CMakeFiles/test2.dir/build.make CMakeFiles/test2.dir/depend
-	$(MAKE) -f CMakeFiles/test2.dir/build.make CMakeFiles/test2.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles  4
-	@echo "Built target test2"
-.PHONY : CMakeFiles/test2.dir/all
-
-# Include target in all.
-all: CMakeFiles/test2.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/test2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 0
-.PHONY : CMakeFiles/test2.dir/rule
-
-# Convenience name for target.
-test2: CMakeFiles/test2.dir/rule
-.PHONY : test2
-
-# clean rule for target.
-CMakeFiles/test2.dir/clean:
-	$(MAKE) -f CMakeFiles/test2.dir/build.make CMakeFiles/test2.dir/clean
-.PHONY : CMakeFiles/test2.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/test2.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/test3.dir
-
-# All Build rule for target.
-CMakeFiles/test3.dir/all:
-	$(MAKE) -f CMakeFiles/test3.dir/build.make CMakeFiles/test3.dir/depend
-	$(MAKE) -f CMakeFiles/test3.dir/build.make CMakeFiles/test3.dir/build
+CMakeFiles/test_config.dir/all: CMakeFiles/sylar.dir/all
+	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/depend
+	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles  5
-	@echo "Built target test3"
-.PHONY : CMakeFiles/test3.dir/all
+	@echo "Built target test_config"
+.PHONY : CMakeFiles/test_config.dir/all
 
 # Include target in all.
-all: CMakeFiles/test3.dir/all
+all: CMakeFiles/test_config.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/test3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test3.dir/all
+CMakeFiles/test_config.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_config.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/dulred/sylar/build/CMakeFiles 0
-.PHONY : CMakeFiles/test3.dir/rule
+.PHONY : CMakeFiles/test_config.dir/rule
 
 # Convenience name for target.
-test3: CMakeFiles/test3.dir/rule
-.PHONY : test3
+test_config: CMakeFiles/test_config.dir/rule
+.PHONY : test_config
 
 # clean rule for target.
-CMakeFiles/test3.dir/clean:
-	$(MAKE) -f CMakeFiles/test3.dir/build.make CMakeFiles/test3.dir/clean
-.PHONY : CMakeFiles/test3.dir/clean
+CMakeFiles/test_config.dir/clean:
+	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/clean
+.PHONY : CMakeFiles/test_config.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/test3.dir/clean
+clean: CMakeFiles/test_config.dir/clean
 .PHONY : clean
 
 #=============================================================================

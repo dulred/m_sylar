@@ -2,3 +2,7 @@
 2024-05-27 19:30:46	ERROR	test macro fmt error aa
 2024-05-27 20:21:21	ERROR	test macro error
 2024-05-27 20:21:21	ERROR	test macro fmt error aa
+2024-05-27 20:24:44	ERROR	test macro error
+2024-05-27 20:24:44	ERROR	test macro fmt error aa
+2024-05-27 23:18:21	ERROR	test macro error
+2024-05-27 23:18:21	ERROR	test macro fmt error aa

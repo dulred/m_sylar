@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
-../sylar/log.h
+/home/dulred/sylar/sylar/config.cc
+config.h
+/home/dulred/sylar/sylar/config.h
+
+/home/dulred/sylar/sylar/config.h
+memory
+-
+string
+-
+sstream
+-
+boost/lexical_cast.hpp
+-
+log.h
+/home/dulred/sylar/sylar/log.h
+
+/home/dulred/sylar/sylar/log.h
 string
 -
 stdint.h
@@ -23,24 +39,20 @@ fstream
 -
 map
 -
+util.h
+/home/dulred/sylar/sylar/util.h
 singleton.h
-../sylar/singleton.h
+/home/dulred/sylar/sylar/singleton.h
 
-../sylar/singleton.h
+/home/dulred/sylar/sylar/singleton.h
 
-/home/dulred/sylar/sylar/log.cc
-log.h
+/home/dulred/sylar/sylar/util.h
+sys/types.h
 -
-map
+unistd.h
 -
-iostream
+sys/syscall.h
 -
-functional
--
-time.h
--
-string.h
--
-stdarg.h
+stdint.h
 -
 
