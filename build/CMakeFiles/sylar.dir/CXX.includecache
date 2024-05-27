@@ -21,6 +21,12 @@ sstream
 -
 fstream
 -
+map
+-
+singleton.h
+../sylar/singleton.h
+
+../sylar/singleton.h
 
 /home/dulred/sylar/sylar/log.cc
 log.h
@@ -34,5 +40,7 @@ functional
 time.h
 -
 string.h
+-
+stdarg.h
 -
 

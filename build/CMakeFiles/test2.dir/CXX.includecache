@@ -21,6 +21,12 @@ sstream
 -
 fstream
 -
+map
+-
+singleton.h
+/home/dulred/sylar/sylar/singleton.h
+
+/home/dulred/sylar/sylar/singleton.h
 
 /home/dulred/sylar/tests/test2.cc
 iostream

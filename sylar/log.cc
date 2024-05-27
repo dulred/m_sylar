@@ -4,6 +4,7 @@
 #include <functional>
 #include <time.h>
 #include <string.h>
+#include <stdarg.h>
 
 namespace sylar{
 
@@ -32,10 +33,33 @@ LogEventWrap::LogEventWrap(LogEvent::ptr e):m_event(e){
 LogEventWrap::~LogEventWrap(){
     m_event->getLogger()->log(m_event->getLevel(), m_event);
 };
+
 std::stringstream&  LogEventWrap::getSS(){
     return m_event->getSS();
 };
 
+
+/**
+ *  void format(const char* fmt, ...); 是一个直接接受可变数量参数的函数。
+    void format(const char* fmt, va_list al); 接受一个 va_list 类型的参数，这个参数已经包含了可变参数列表。
+    两者常常配合使用，前者用于接收可变参数并将其转化为 va_list 类型，后者用于实际的处理工作。
+*/
+void LogEvent::format(const char* fmt, ...){
+    va_list al;
+    va_start(al, fmt);
+    format(fmt, al);
+    va_end(al);
+};
+void LogEvent::format(const char* fmt, va_list al){
+    char* buf = nullptr;
+    int len = vasprintf(&buf, fmt, al);
+    if (len != -1)
+    {
+        m_ss << std::string(buf, len);
+        free(buf);
+    }
+    
+};
 
 
 class MessageFormatItem : public LogFormatter::FormatItem{
@@ -231,21 +255,33 @@ LogEvent::LogEvent
     }
     FileLogAppender::FileLogAppender(const std::string &filename):m_filename(filename)
     {
+        reopen();
     }
     void FileLogAppender::log(std::shared_ptr<Logger> logger,LogLevel::Level level, LogEvent::ptr event)
     {
         if (level >= m_level)
             {
-                m_filestream<<m_formatter->format(logger,level,event);
+                 // 打开一个文件。如果文件不存在，将创建该文件
+                m_filestream.open(m_filename, std::ios::app);
+
+                // 检查文件是否成功打开
+                if (!m_filestream.is_open()) {
+                    std::cerr << "Failed to open the file." << std::endl;
+                }
+
+                // 使用流插入运算符将内容写入文件
+                m_filestream << m_formatter->format(logger,level,event);
+                
+                // 关闭文件
+                m_filestream.close();
             }
     }
     bool FileLogAppender::reopen()
     {
         if (m_filestream)
-        {
+        {   
             m_filestream.close();
         }   
-        m_filestream.open(m_filename);
         return !!m_filestream;
         
     }
@@ -391,6 +427,16 @@ void LogFormatter::init() {
     }
     // std::cout<< m_items.size() << std::endl;
 }
+
+
+LoggerManager::LoggerManager(){
+    m_root.reset(new Logger);
+    m_root->addAppender(LogAppender::ptr(new StdoutLogAppender));
+};
+Logger::ptr LoggerManager::getLogger(const std::string& name){
+    auto it = m_loggers.find(name);
+    return it == m_loggers.end() ? m_root : it->second;
+};
 
 
 

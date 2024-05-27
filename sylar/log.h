@@ -8,6 +8,8 @@
 #include <vector>
 #include <sstream>
 #include <fstream>
+#include <map>
+#include "singleton.h"
 
 //%m -- 消息体
 //%p -- level
@@ -30,6 +32,20 @@
 #define SYLAR_LOG_WARN(logger) SYLAR_LOG_LEVEL(logger, sylar::LogLevel::WARN)
 #define SYLAR_LOG_ERROR(logger) SYLAR_LOG_LEVEL(logger, sylar::LogLevel::ERROR)
 #define SYLAR_LOG_FATAL(logger) SYLAR_LOG_LEVEL(logger, sylar::LogLevel::FATAL)
+
+
+#define SYLAR_LOG_FMT_LEVEL(logger, level, fmt, ...) \
+    if(logger->getLevel() <= level) \
+        sylar::LogEventWrap(sylar::LogEvent::ptr(new sylar::LogEvent(logger, level, \
+                    __FILE__, __LINE__, 0, sylar::GetThreadId(),\
+                sylar::GetFiberId(), time(0)))).getEvent()->format(fmt, __VA_ARGS__)
+
+#define SYLAR_LOG_FMT_DEBUG(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::DEBUG, fmt, __VA_ARGS__)
+#define SYLAR_LOG_FMT_INFO(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::INFO, fmt, __VA_ARGS__)
+#define SYLAR_LOG_FMT_WARN(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::WARN, fmt, __VA_ARGS__)
+#define SYLAR_LOG_FMT_ERROR(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::ERROR, fmt, __VA_ARGS__)
+#define SYLAR_LOG_FMT_FATAL(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::FATAL, fmt, __VA_ARGS__)
+
 
 namespace sylar{
 
@@ -69,6 +85,8 @@ public:
     LogLevel::Level getLevel() const {return m_level;}
 
     std::stringstream& getSS() {return m_ss;} 
+    void format(const char* fmt, ...);
+    void format(const char* fmt, va_list al);
 private:
     const char* m_file = nullptr; //文件名
     int32_t m_line = 0; //行号
@@ -87,6 +105,7 @@ class LogEventWrap {
 public:
     LogEventWrap(LogEvent::ptr e);
     ~LogEventWrap();
+    LogEvent::ptr getEvent() const {return m_event;}
     std::stringstream&  getSS();
 private:
     LogEvent::ptr m_event;
@@ -171,10 +190,30 @@ public:
     void log(Logger::ptr logger,LogLevel::Level level, LogEvent::ptr event) override;
     // 重新打开文件，成功打开返回true
     bool reopen();
+
+    LogLevel::Level getLevel() const {return m_level;}
+    void setLevel(LogLevel::Level val) {m_level = val;}
+
 private:
     std::string m_filename;
     std::ofstream m_filestream;
 };
+
+class LoggerManager {
+public:
+    LoggerManager();
+    Logger::ptr getLogger(const std::string& name);
+
+    void init();
+
+private:
+    std::map<std::string, Logger::ptr> m_loggers;
+    Logger::ptr m_root;
+
+};
+
+typedef sylar::Singleton<LoggerManager> LoggerMgr;
+
 
 }
 
