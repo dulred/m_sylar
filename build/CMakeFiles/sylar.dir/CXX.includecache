@@ -6,17 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/home/dulred/sylar/sylar/util.cc
-util.h
-/home/dulred/sylar/sylar/util.h
-
-/home/dulred/sylar/sylar/util.h
-sys/types.h
--
-unistd.h
--
-sys/syscall.h
+../sylar/log.h
+string
 -
 stdint.h
+-
+memory
+-
+list
+-
+vector
+-
+sstream
+-
+fstream
+-
+
+/home/dulred/sylar/sylar/log.cc
+log.h
+-
+map
+-
+iostream
+-
+functional
+-
+time.h
+-
+string.h
 -
 
