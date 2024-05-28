@@ -19,5 +19,16 @@ system:
     value: 15
     # int_vec: [10, 20]
     int_vec:
-        - 40
-        - 60
+        - 30
+        - 65
+    int_list: [20,40,50]
+    int_set: [20,40,50,20]
+    int_uset: [21,42,54,54]
+    str_int_map:
+          k: 30
+          k2: 20
+          h3: 10
+    str_int_umap:
+          k: 130
+          k2: 120
+          h3: 110
