@@ -59,15 +59,15 @@ CMakeFiles/sylar.dir/sylar/log.cc.o: CMakeFiles/sylar.dir/flags.make
 CMakeFiles/sylar.dir/sylar/log.cc.o: ../sylar/log.cc
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/sylar.dir/sylar/log.cc.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/log.cc.o -c /home/dulred/sylar/sylar/log.cc
+	/usr/local/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/log.cc.o -c /home/dulred/sylar/sylar/log.cc
 
 CMakeFiles/sylar.dir/sylar/log.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/log.cc.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/sylar/sylar/log.cc > CMakeFiles/sylar.dir/sylar/log.cc.i
+	/usr/local/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/sylar/sylar/log.cc > CMakeFiles/sylar.dir/sylar/log.cc.i
 
 CMakeFiles/sylar.dir/sylar/log.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/log.cc.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/sylar/sylar/log.cc -o CMakeFiles/sylar.dir/sylar/log.cc.s
+	/usr/local/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/sylar/sylar/log.cc -o CMakeFiles/sylar.dir/sylar/log.cc.s
 
 CMakeFiles/sylar.dir/sylar/log.cc.o.requires:
 .PHONY : CMakeFiles/sylar.dir/sylar/log.cc.o.requires
@@ -82,15 +82,15 @@ CMakeFiles/sylar.dir/sylar/util.cc.o: CMakeFiles/sylar.dir/flags.make
 CMakeFiles/sylar.dir/sylar/util.cc.o: ../sylar/util.cc
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/sylar.dir/sylar/util.cc.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/util.cc.o -c /home/dulred/sylar/sylar/util.cc
+	/usr/local/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/util.cc.o -c /home/dulred/sylar/sylar/util.cc
 
 CMakeFiles/sylar.dir/sylar/util.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/util.cc.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/sylar/sylar/util.cc > CMakeFiles/sylar.dir/sylar/util.cc.i
+	/usr/local/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/sylar/sylar/util.cc > CMakeFiles/sylar.dir/sylar/util.cc.i
 
 CMakeFiles/sylar.dir/sylar/util.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/util.cc.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/sylar/sylar/util.cc -o CMakeFiles/sylar.dir/sylar/util.cc.s
+	/usr/local/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/sylar/sylar/util.cc -o CMakeFiles/sylar.dir/sylar/util.cc.s
 
 CMakeFiles/sylar.dir/sylar/util.cc.o.requires:
 .PHONY : CMakeFiles/sylar.dir/sylar/util.cc.o.requires
@@ -105,15 +105,15 @@ CMakeFiles/sylar.dir/sylar/config.cc.o: CMakeFiles/sylar.dir/flags.make
 CMakeFiles/sylar.dir/sylar/config.cc.o: ../sylar/config.cc
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/sylar.dir/sylar/config.cc.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/config.cc.o -c /home/dulred/sylar/sylar/config.cc
+	/usr/local/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/sylar.dir/sylar/config.cc.o -c /home/dulred/sylar/sylar/config.cc
 
 CMakeFiles/sylar.dir/sylar/config.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sylar.dir/sylar/config.cc.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/sylar/sylar/config.cc > CMakeFiles/sylar.dir/sylar/config.cc.i
+	/usr/local/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/sylar/sylar/config.cc > CMakeFiles/sylar.dir/sylar/config.cc.i
 
 CMakeFiles/sylar.dir/sylar/config.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sylar.dir/sylar/config.cc.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/sylar/sylar/config.cc -o CMakeFiles/sylar.dir/sylar/config.cc.s
+	/usr/local/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/sylar/sylar/config.cc -o CMakeFiles/sylar.dir/sylar/config.cc.s
 
 CMakeFiles/sylar.dir/sylar/config.cc.o.requires:
 .PHONY : CMakeFiles/sylar.dir/sylar/config.cc.o.requires

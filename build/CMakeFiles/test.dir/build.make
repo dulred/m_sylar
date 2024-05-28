@@ -59,15 +59,15 @@ CMakeFiles/test.dir/tests/test.cc.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/tests/test.cc.o: ../tests/test.cc
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/test.dir/tests/test.cc.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/test.dir/tests/test.cc.o -c /home/dulred/sylar/tests/test.cc
+	/usr/local/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/test.dir/tests/test.cc.o -c /home/dulred/sylar/tests/test.cc
 
 CMakeFiles/test.dir/tests/test.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/test.cc.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/sylar/tests/test.cc > CMakeFiles/test.dir/tests/test.cc.i
+	/usr/local/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/sylar/tests/test.cc > CMakeFiles/test.dir/tests/test.cc.i
 
 CMakeFiles/test.dir/tests/test.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test.cc.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/sylar/tests/test.cc -o CMakeFiles/test.dir/tests/test.cc.s
+	/usr/local/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/sylar/tests/test.cc -o CMakeFiles/test.dir/tests/test.cc.s
 
 CMakeFiles/test.dir/tests/test.cc.o.requires:
 .PHONY : CMakeFiles/test.dir/tests/test.cc.o.requires
@@ -88,6 +88,7 @@ test_EXTERNAL_OBJECTS =
 ../bin/test: CMakeFiles/test.dir/tests/test.cc.o
 ../bin/test: CMakeFiles/test.dir/build.make
 ../bin/test: ../bin/libsylar.so
+../bin/test: /apps/sylar/lib/libyaml-cpp.a
 ../bin/test: CMakeFiles/test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)

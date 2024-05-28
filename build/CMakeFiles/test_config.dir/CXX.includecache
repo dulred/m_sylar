@@ -347,6 +347,10 @@ boost/lexical_cast.hpp
 -
 log.h
 /home/dulred/sylar/sylar/log.h
+algorithm
+-
+yaml-cpp/yaml.h
+-
 
 /home/dulred/sylar/sylar/log.h
 string
