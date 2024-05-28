@@ -356,22 +356,6 @@ algorithm
 yaml-cpp/yaml.h
 -
 
-/home/dulred/sylar/sylar/log.cc
-log.h
-/home/dulred/sylar/sylar/log.h
-map
--
-iostream
--
-functional
--
-time.h
--
-string.h
--
-stdarg.h
--
-
 /home/dulred/sylar/sylar/log.h
 string
 -
@@ -395,10 +379,6 @@ singleton.h
 /home/dulred/sylar/sylar/singleton.h
 
 /home/dulred/sylar/sylar/singleton.h
-
-/home/dulred/sylar/sylar/util.cc
-util.h
-/home/dulred/sylar/sylar/util.h
 
 /home/dulred/sylar/sylar/util.h
 sys/types.h

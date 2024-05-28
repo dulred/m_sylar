@@ -59,15 +59,15 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: CMakeFiles/test_config.dir/fl
 CMakeFiles/test_config.dir/tests/test_config.cc.o: ../tests/test_config.cc
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/dulred/sylar/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/test_config.dir/tests/test_config.cc.o"
-	/usr/local/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/test_config.dir/tests/test_config.cc.o -c /home/dulred/sylar/tests/test_config.cc
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/test_config.dir/tests/test_config.cc.o -c /home/dulred/sylar/tests/test_config.cc
 
 CMakeFiles/test_config.dir/tests/test_config.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_config.dir/tests/test_config.cc.i"
-	/usr/local/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/sylar/tests/test_config.cc > CMakeFiles/test_config.dir/tests/test_config.cc.i
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dulred/sylar/tests/test_config.cc > CMakeFiles/test_config.dir/tests/test_config.cc.i
 
 CMakeFiles/test_config.dir/tests/test_config.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_config.dir/tests/test_config.cc.s"
-	/usr/local/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/sylar/tests/test_config.cc -o CMakeFiles/test_config.dir/tests/test_config.cc.s
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dulred/sylar/tests/test_config.cc -o CMakeFiles/test_config.dir/tests/test_config.cc.s
 
 CMakeFiles/test_config.dir/tests/test_config.cc.o.requires:
 .PHONY : CMakeFiles/test_config.dir/tests/test_config.cc.o.requires
