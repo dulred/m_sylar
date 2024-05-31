@@ -14,6 +14,7 @@
 #include <set>
 #include <unordered_map>
 #include <unordered_set>
+#include <functional>
 
 namespace sylar {
 

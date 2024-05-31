@@ -8,3 +8,5 @@
 2024-05-28 15:33:39	ERROR	test macro fmt error aa
 2024-05-28 15:48:45	ERROR	test macro error
 2024-05-28 15:48:45	ERROR	test macro fmt error aa
+2024-05-31 13:24:29	ERROR	test macro error
+2024-05-31 13:24:29	ERROR	test macro fmt error aa

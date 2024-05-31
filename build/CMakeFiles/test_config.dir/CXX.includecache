@@ -363,6 +363,8 @@ unordered_map
 -
 unordered_set
 -
+functional
+-
 
 /home/dulred/sylar/sylar/log.h
 string
