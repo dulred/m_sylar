@@ -25,8 +25,10 @@ static void ListAllMember(const std::string& prefix,
         return;
     }
     output.push_back(std::make_pair(prefix, node));
+    // std::cout << prefix << std::endl;
     if (node.IsMap())
     {
+        // std::cout << prefix << "22" << std::endl;
         for (auto it = node.begin(); it !=node.end(); ++it)
         {
            ListAllMember(prefix.empty() ? it->first.Scalar() : prefix + "." + it->first.Scalar(), it->second,output);
